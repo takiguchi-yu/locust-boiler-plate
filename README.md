@@ -129,7 +129,6 @@ locust -f locustfile.py
 cd app
 
 # 認証トークンを取得し、レジストリに対して Docker クライアントを認証する
-# NetSkope が enable だと認証に失敗する可能性があるため、 disable にしておく
 aws ecr get-login-password --region ap-northeast-1 --profile YOUR-PROFILE | docker login --username AWS --password-stdin 999999999999.dkr.ecr.ap-northeast-1.amazonaws.com
 # Docker イメージを構築する
 docker build -t performance-testing-locust-repo .
